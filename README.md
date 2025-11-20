@@ -154,8 +154,6 @@ Recomendado para empresas.
 
  Multi-empresa / Multi-equipo
 
- Exportación a vCard
-
  Generador de QR integrado
 
  Versión API / Backend opcional
@@ -181,4 +179,5 @@ Total libertad para modificar y usar profesionalmente.
 👨‍💻 Autor
 
 Esteban Gualpa
+
 Lead Developer — (LST)

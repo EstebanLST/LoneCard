@@ -1,0 +1,518 @@
+/* ==========================================================================
+   LoneCard - Estilos base
+   Autor: Esteban Gualpa - Loneliness Software Technology
+   Descripción:
+   - Tema oscuro moderno LST (azules, violetas, cian)
+   - Tipografía limpia
+   - Componentes reutilizables
+   ========================================================================== */
+
+:root {
+  /* Colores base (fondo tipo "LST" ) */
+  --lc-bg: #020617;               /* fondo general (muy oscuro)              */
+  --lc-bg-card: #020617;          /* fondo tarjeta                           */
+  --lc-bg-card-inner: #020617;    /* fondo interior                          */
+  --lc-border-subtle: #1f2937;
+  --lc-text-main: #e5e7eb;        /* texto principal casi blanco             */
+  --lc-text-muted: #9ca3af;       /* texto secundario                        */
+  --lc-text-soft: #6b7280;        /* texto más suave                         */
+
+  /* Colores de marca Loneliness / LST
+     - Primario: azul
+     - Secundario: violeta
+     - Accent: cian (para detalles)
+  */
+  --lc-accent: #2563eb;           /* azul principal (botones, resaltados)    */
+  --lc-accent-soft: rgba(37, 99, 235, 0.15);
+  --lc-accent-strong: #7c3aed;    /* violeta fuerte para degradados          */
+  --lc-brand: #22d3ee;            /* cian LST (detalles, firma LoneCard)     */
+
+  /* Estados */
+  --lc-success: #22c55e;          /* verde (OK, WhatsApp)                    */
+  --lc-danger: #ef4444;
+
+  /* Sombra y bordes */
+  --lc-radius-card: 24px;
+  --lc-radius-full: 999px;
+  --lc-shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.75);
+
+  /* Tipografía */
+  --lc-font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  /* Transiciones */
+  --lc-transition-fast: 0.18s ease-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--lc-font-main);
+  /* Fondo general tipo "matrix" suave: centro oscuro, bordes casi negros  */
+  background: radial-gradient(circle at top, #020617, #000000 60%);
+  color: var(--lc-text-main);
+}
+
+/* CONTENEDOR PRINCIPAL ---------------------------------------------------- */
+
+.lc-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* TARJETA PRINCIPAL ------------------------------------------------------- */
+
+.lc-card {
+  width: 100%;
+  max-width: 420px;
+  /* Degradado con la paleta azul-violeta LST */
+  background: linear-gradient(145deg, #020617, #020617 35%, #020617 60%);
+  border-radius: var(--lc-radius-card);
+  box-shadow: var(--lc-shadow-soft);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER / BRANDING ------------------------------------------------------- */
+
+.lc-card__header {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  /* Faja superior con degradado LST */
+  background: radial-gradient(circle at top left, #0b1120, #020617 60%);
+}
+
+.lc-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lc-brand__logo {
+  width: 88px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.6));
+}
+
+.lc-brand__tagline {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.lc-brand__product {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  /* LoneCard en azul LST */
+  color: var(--lc-accent);
+}
+
+.lc-brand__by {
+  font-size: 0.75rem;
+  color: var(--lc-text-soft);
+}
+
+/* HERO: FONDO + AVATAR ---------------------------------------------------- */
+
+.lc-hero {
+  position: relative;
+  background: #020617;
+}
+
+.lc-hero__background {
+  height: 150px;
+  overflow: hidden;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.lc-hero__background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Un poco más de contraste para fondo de cabecera */
+  filter: brightness(1.05) contrast(1.1);
+}
+
+/* Avatar del colaborador */
+
+.lc-hero__avatar-wrapper {
+  position: absolute;
+  left: 50%;
+  bottom: -52px;
+  transform: translateX(-50%);
+  width: 122px;
+  height: 122px;
+  border-radius: var(--lc-radius-full);
+  padding: 4px;
+  /* Borde tipo "anillo LST": cian → azul → violeta */
+  background: conic-gradient(
+    from 180deg,
+    var(--lc-brand),
+    var(--lc-accent),
+    var(--lc-accent-strong),
+    var(--lc-brand)
+  );
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.8);
+}
+
+.lc-hero__avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  border: 3px solid #020617;
+  background: #020617;
+}
+
+/* CONTENIDO PRINCIPAL ----------------------------------------------------- */
+
+.lc-content {
+  padding: 70px 22px 20px;
+  /* Fondo interior ligeramente más claro que el body */
+  background: radial-gradient(circle at top, #020617, #020617 60%);
+}
+
+.lc-content__name {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--lc-text-main);
+}
+
+.lc-content__role {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--lc-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lc-content__location {
+  margin: 0 0 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--lc-text-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.lc-content__location-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* ICONOS BÁSICOS - USANDO IMÁGENES PNG/SVG DESDE assets/img/icons
+   Cada icono es un span con clase lc-icon y un modificador lc-icon--tipo.
+   Para cambiar un icono basta con reemplazar la imagen en la carpeta /icons.
+--------------------------------------------------------------------- */
+
+.lc-icon {
+  display: inline-block;
+  width: 1.25rem;      /* tamaño base del icono */
+  height: 1.25rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Íconos específicos (rutas relativas desde assets/css/styles.css) */
+
+.lc-icon--location {
+  background-image: url("../img/icons/location.png");
+}
+
+.lc-icon--whatsapp {
+  background-image: url("../img/icons/whatsapp.png");
+}
+
+.lc-icon--phone {
+  background-image: url("../img/icons/phone.png");
+}
+
+.lc-icon--email {
+  background-image: url("../img/icons/mail.png");
+}
+
+.lc-icon--mobile {
+  background-image: url("../img/icons/smartphone.png");
+}
+
+.lc-icon--share {
+  background-image: url("../img/icons/share.png");
+}
+
+.lc-icon--id {
+  background-image: url("../img/icons/co_present.png");
+}
+
+.lc-icon--info {
+  background-image: url("../img/icons/web.png");
+}
+
+.lc-icon--office {
+  background-image: url("../img/icons/location_city.png");
+}
+
+.lc-icon--link {
+  background-image: url("../img/icons/share.png");
+}
+
+/* ACCIONES DE CONTACTO ---------------------------------------------------- */
+
+.lc-actions {
+  margin: 0 auto 18px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.lc-actions__btn {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--lc-radius-full);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--lc-transition-fast),
+    box-shadow var(--lc-transition-fast), background-color var(--lc-transition-fast);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.65);
+  background: #0b1120;
+}
+
+.lc-actions__btn span {
+  font-size: 1.2rem;
+}
+
+/* Colores según tipo de botón */
+.lc-actions__btn--whatsapp {
+  /* WhatsApp se mantiene verde (estándar de UX) */
+  background: radial-gradient(circle at 30% 30%, #22c55e, #15803d);
+  color: #ecfdf5;
+}
+
+.lc-actions__btn--phone {
+  /* Teléfono: azul LST */
+  background: radial-gradient(circle at 30% 30%, #38bdf8, var(--lc-accent));
+}
+
+.lc-actions__btn--email {
+  /* Correo: violeta LST */
+  background: radial-gradient(circle at 30% 30%, #6366f1, var(--lc-accent-strong));
+}
+
+.lc-actions__btn--mobile {
+  /* Móvil: cian → azul (otro matiz LST) */
+  background: radial-gradient(circle at 30% 30%, var(--lc-brand), var(--lc-accent));
+}
+
+.lc-actions__btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.9);
+}
+
+.lc-actions__btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.75);
+}
+
+/* BOTONES PRINCIPALES ---------------------------------------------------- */
+
+.lc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color var(--lc-transition-fast),
+    border-color var(--lc-transition-fast), transform var(--lc-transition-fast),
+    box-shadow var(--lc-transition-fast), color var(--lc-transition-fast);
+}
+
+.lc-btn--primary {
+  margin-bottom: 8px;
+  /* Botón principal: degradado azul → violeta LST */
+  background: linear-gradient(135deg, var(--lc-accent), var(--lc-accent-strong));
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.45);
+}
+
+.lc-btn--primary:hover {
+  background: linear-gradient(135deg, var(--lc-accent-strong), var(--lc-accent));
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.6);
+}
+
+.lc-btn--ghost {
+  background: transparent;
+  border-color: rgba(148, 163, 184, 0.4);
+  color: var(--lc-text-muted);
+}
+
+.lc-btn--ghost:hover {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(148, 163, 184, 0.75);
+  color: var(--lc-text-main);
+}
+
+/* FOOTER ------------------------------------------------------------------ */
+
+.lc-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
+  background: #020617;
+}
+
+.lc-footer__item {
+  flex: 1;
+  padding: 10px 4px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--lc-text-soft);
+  font-size: 0.75rem;
+  border-right: 1px solid rgba(30, 41, 59, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  transition: background-color var(--lc-transition-fast),
+    color var(--lc-transition-fast);
+}
+
+.lc-footer__item:last-child {
+  border-right: none;
+}
+
+.lc-footer__item:hover {
+  background-color: rgba(15, 23, 42, 0.95);
+  color: var(--lc-text-main);
+}
+
+.lc-footer__icon {
+  font-size: 0.9rem;
+}
+
+.lc-footer__label {
+  white-space: nowrap;
+}
+
+/* FIRMA INFERIOR --------------------------------------------------------- */
+
+.lc-signature {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--lc-text-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.lc-signature__brand {
+  font-weight: 500;
+  /* Firma LoneCard en cian LST */
+  color: var(--lc-brand);
+}
+/* ========================================================================== */
+/* Overlay de error cuando el ID no existe                                   */
+/* ========================================================================== */
+
+.lc-card--disabled {
+  filter: blur(2px) grayscale(0.4);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Fondo oscuro encima de todo */
+.lc-error {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.98));
+  display: none; /* visible solo cuando hay error */
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+  padding: 16px;
+}
+
+/* Cuando se muestre el overlay */
+.lc-error--visible {
+  display: flex;
+}
+
+/* Caja de diálogo */
+.lc-error__dialog {
+  max-width: 420px;
+  width: 100%;
+  background: #020617;
+  border-radius: 20px;
+  padding: 24px 20px 20px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  text-align: center;
+}
+
+/* Icono */
+.lc-error__icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+/* Título y texto */
+.lc-error__title {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  color: var(--lc-text-main);
+}
+
+.lc-error__message {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  color: var(--lc-text-soft);
+}
+
+/* Botón dentro del diálogo */
+.lc-error__btn {
+  max-width: 260px;
+  margin: 0 auto;
+}
+

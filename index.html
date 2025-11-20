@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!--
+    LoneCard - Tarjeta de presentación digital
+    Autor: Esteban Gualpa (Loneliness Software Technology)
+    Descripción:
+    Plantilla principal para mostrar la tarjeta de un colaborador.
+    Los datos se cargan dinámicamente vía JavaScript usando el parámetro ?id=LST01, etc.
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Tarjeta de presentación digital para colaboradores, con diseño moderno, responsivo y compatible con cualquier dispositivo."
+  />
+  <title>LoneCard – Tarjeta de Presentación</title>
+
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Estilos específicos para adaptarse a móviles, tablets y desktop -->
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+  <!--
+    CONTENEDOR PRINCIPAL
+    - Fondo oscuro de la app
+    - Tarjeta centrada vertical y horizontalmente
+  -->
+  <div class="lc-app">
+    <main class="lc-card" aria-labelledby="lc-nombre">
+      <!-- BARRA SUPERIOR / BRANDING -->
+      <header class="lc-card__header">
+        <div class="lc-brand">
+          <!-- Logo empresa cliente -->
+          <img
+            src="assets/img/logos/LST.png"
+            alt="Logo de la empresa"
+            class="lc-brand__logo"
+          />
+          <!-- Logo o texto de tu marca (LoneCard / Loneliness) -->
+          <div class="lc-brand__tagline">
+            <span class="lc-brand__product">LoneCard</span>
+            <span class="lc-brand__by">by Loneliness Software Technology</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- HERO / IMAGEN DE FONDO + FOTO DEL COLABORADOR -->
+      <section class="lc-hero" aria-hidden="true">
+        <div class="lc-hero__background">
+          <!-- Imagen decorativa corporativa (puede ser un banner) -->
+          <img
+            src="assets/img/logos/logo.1.jpg  "
+            alt=""
+            class="lc-hero__background-img"
+          />
+        </div>
+        <div class="lc-hero__avatar-wrapper">
+          <!-- Foto del colaborador (se rellena dinámicamente) -->
+          <img
+            id="foto"
+            src="https://via.placeholder.com/160"
+            alt="Foto del colaborador"
+            class="lc-hero__avatar"
+          />
+        </div>
+      </section>
+
+      <!-- CONTENIDO PRINCIPAL: NOMBRE, PUESTO, UBICACIÓN -->
+      <section class="lc-content">
+        <h1 id="nombre" class="lc-content__name">Nombre del colaborador</h1>
+        <h2 id="puesto" class="lc-content__role">Cargo / Puesto</h2>
+
+        <p id="ubicacion" class="lc-content__location">
+          <!-- El ícono se mantiene fijo, solo cambia el texto vía JS -->
+          <span class="lc-icon lc-icon--location" aria-hidden="true"></span>
+          <span class="lc-content__location-text">Ciudad, País</span>
+        </p>
+
+        <!-- BOTONES DE CONTACTO -->
+        <div class="lc-actions" aria-label="Opciones de contacto">
+          <a
+            id="btnWhatsapp"
+            href="#"
+            class="lc-actions__btn lc-actions__btn--whatsapp"
+            aria-label="Contactar por WhatsApp"
+          >
+            <span class="lc-icon lc-icon--whatsapp" aria-hidden="true"></span>
+          </a>
+
+          <a
+            id="btnTel"
+            href="#"
+            class="lc-actions__btn lc-actions__btn--phone"
+            aria-label="Llamar al teléfono fijo"
+          >
+            <span class="lc-icon lc-icon--phone" aria-hidden="true"></span>
+          </a>
+
+          <a
+            id="btnMail"
+            href="#"
+            class="lc-actions__btn lc-actions__btn--email"
+            aria-label="Enviar correo electrónico"
+          >
+            <span class="lc-icon lc-icon--email" aria-hidden="true"></span>
+          </a>
+
+          <a
+            id="btnMovil"
+            href="#"
+            class="lc-actions__btn lc-actions__btn--mobile"
+            aria-label="Llamar al móvil"
+          >
+            <span class="lc-icon lc-icon--mobile" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <!-- BOTÓN PARA DESCARGAR CONTACTO (VCARD) -->
+        <a
+          href="#"
+          id="guardarContacto"
+          class="lc-btn lc-btn--primary"
+          role="button"
+        >
+          Guardar contacto
+        </a>
+
+        <!-- COMPARTIR -->
+        <button
+          id="compartirWhatsapp"
+          class="lc-btn lc-btn--ghost"
+          type="button"
+        >
+          <span class="lc-icon lc-icon--share" aria-hidden="true"></span>
+          Compartir tarjeta
+        </button>
+      </section>
+
+      <!-- FOOTER / LINKS INFORMATIVOS -->
+      <footer class="lc-footer">
+        <div class="lc-footer__item">
+          <span class="lc-footer__icon lc-icon lc-icon--id" aria-hidden="true"></span>
+          <span class="lc-footer__label">Mi tarjeta</span>
+        </div>
+        <a
+          href="https://"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="lc-footer__item"
+        >
+          <span class="lc-footer__icon lc-icon lc-icon--info" aria-hidden="true"></span>
+          <span class="lc-footer__label">Nosotros</span>
+        </a>
+        <a
+          href="https://"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="lc-footer__item"
+        >
+          <span class="lc-footer__icon lc-icon lc-icon--office" aria-hidden="true"></span>
+          <span class="lc-footer__label">Sucursales</span>
+        </a>
+        <a
+          href="https://"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="lc-footer__item"
+        >
+          <span class="lc-footer__icon lc-icon lc-icon--link" aria-hidden="true"></span>
+          <span class="lc-footer__label">Redes</span>
+        </a>
+      </footer>
+    </main>
+
+      <!-- Tarjeta principal -->
+  <main class="lc-card" aria-labelledby="lc-nombre">
+    <!-- ... TODO LO QUE YA TIENES DENTRO DE LA TARJETA ... -->
+  </main>
+
+  <!-- Overlay de error cuando el ID no existe -->
+  <div id="lc-error" class="lc-error" aria-hidden="true">
+    <div class="lc-error__dialog" role="alertdialog" aria-labelledby="lc-error-title">
+      <div class="lc-error__icon"></div>
+      <h2 id="lc-error-title" class="lc-error__title">Tarjeta no disponible</h2>
+      <p class="lc-error__message">
+        El identificador proporcionado no corresponde a ningún colaborador activo.
+        Verifica el código de la tarjeta o ponte en contacto con el administrador.
+      </p>
+
+      <button type="button" id="lc-error-refresh" class="lc-btn lc-btn--primary lc-error__btn">
+        Volver a intentar
+      </button>
+    </div>
+  </div>
+
+
+    <!-- Pie pequeño con marca de LoneCard -->
+    <div class="lc-signature">
+      <span>Desarrollado con</span>
+      <span class="lc-signature__brand">LoneCard · Loneliness LST</span>
+    </div>
+  </div>
+
+  <!--
+    JS:
+    1. utils.js   -> funciones genéricas (getParam, linkWhatsApp, etc.)
+    2. data.js    -> carga de datos / conexión con colaboradores.json
+    3. app.js     -> lógica principal para pintar la tarjeta según el ID
+  -->
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

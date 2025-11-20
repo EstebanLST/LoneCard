@@ -1,0 +1,81 @@
+/* ==========================================================================
+   LoneCard - Estilos responsive
+   ========================================================================== */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+  .lc-card {
+    max-width: 390px;
+  }
+
+  .lc-brand__logo {
+    width: 80px;
+  }
+
+  .lc-content {
+    padding-inline: 18px;
+  }
+
+  .lc-actions__btn {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .lc-app {
+    padding: 10px;
+  }
+
+  .lc-card {
+    border-radius: 18px;
+  }
+
+  .lc-hero__background {
+    height: 130px;
+  }
+
+  .lc-hero__avatar-wrapper {
+    width: 110px;
+    height: 110px;
+    bottom: -50px;
+  }
+
+  .lc-content {
+    padding-top: 66px;
+    padding-inline: 14px;
+  }
+
+  .lc-content__name {
+    font-size: 1.2rem;
+  }
+
+  .lc-content__role {
+    font-size: 0.85rem;
+  }
+
+  .lc-actions {
+    gap: 10px;
+  }
+
+  .lc-actions__btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .lc-footer__label {
+    font-size: 0.7rem;
+  }
+}
+
+/* Pantallas muy pequeñas o modo ventana flotante */
+@media (max-width: 360px) {
+  .lc-content__location {
+    max-width: 100%;
+  }
+
+  .lc-footer__label {
+    display: none;
+  }
+}

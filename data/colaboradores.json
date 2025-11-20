@@ -1,0 +1,37 @@
+{
+  "colaboradores": [
+    {
+      "id": "LST00",
+      "nombre": "Esteban Sebastian Gualpa",
+      "puesto": "Ing. Desarrollo de Software",
+      "ubicacion": "Quito, Ecuador",
+      "foto": "assets/img/colaboradores/Desarrollo/esteban_gualpa.jpeg",
+      "whatsapp": "5930000000000",
+      "telefono": "+593000000000",
+      "movil": "+5930000000000",
+      "email": "esteban@example.com"
+    },
+    {
+      "id": "LST01",
+      "nombre": "Linus Torvalds",
+      "puesto": "Desarrollador de Kernel",
+      "ubicacion": "Helsinki, Finlandia",
+      "foto": "assets/img/colaboradores/Desarrollo/linustorvalds.jpg",
+      "whatsapp": "000000000",
+      "telefono": "000000000",
+      "movil": "000000000",
+      "email": "linus.torvalds@example.com"
+    },
+    {
+      "id": "LST02",
+      "nombre": "Mark Zuckerberg",
+      "puesto": "Cofundador de Facebook",
+      "ubicacion": "Palo Alto, USA",
+      "foto": "assets/img/colaboradores/Desarrollo/mark-zuckerberg-r.jpg",
+      "whatsapp": "000000000",
+      "telefono": "000000000",
+      "movil": "000000000",
+      "email": "mark.zuckerberg@example.com"
+    }
+  ]
+}

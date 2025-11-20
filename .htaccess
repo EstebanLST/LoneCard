@@ -1,0 +1,16 @@
+# ========================================================================
+# LoneCard - Configuración básica de Apache
+# Autor: Esteban Gualpa (LST)
+# Descripción:
+# - Evita el listado de directorios
+# - Asegura que index.html sea el archivo principal
+# ========================================================================
+
+# No permitir ver el listado de archivos de las carpetas
+Options -Indexes
+
+# Archivo por defecto al acceder a /lonecard/
+DirectoryIndex index.html
+
+# Codificación por defecto
+AddDefaultCharset UTF-8

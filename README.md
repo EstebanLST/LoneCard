@@ -1,5 +1,4 @@
-🐢 LoneCard — Tarjetas Digitales Dinámicas para Equipos Modernos
-by Loneliness Software Technology (LST)
+🐢 LoneCard — Tarjetas Digitales Dinámicas para Equipos Modernos (LST)
 <p align="center"> <img src="assets/banner/lonecard-banner.png" alt="LoneCard Banner" width="100%"> </p>
 📌 Badges del Proyecto
 <p align="left"> <img src="https://img.shields.io/github/last-commit/EstebanLST/LoneCard?color=38bdf8&style=for-the-badge"> <img src="https://img.shields.io/github/languages/top/EstebanLST/LoneCard?color=8b5cf6&style=for-the-badge"> <img src="https://img.shields.io/github/repo-size/EstebanLST/LoneCard?color=f97316&style=for-the-badge"> <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge"> <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge"> </p>
@@ -231,4 +230,5 @@ Puedes usarlo, modificarlo y desplegarlo libremente.
 👨‍💻 Autor
 
 Esteban Gualpa
-Lead Developer — Loneliness Software Technology (LST)
+Lead Developer — (LST)
+

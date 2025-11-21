@@ -65,7 +65,9 @@ El archivo .htaccess:
 
 📌 Fuerza index.html como archivo principal
 
-##🧩 Estructura del Proyecto
+## 🧩 Estructura del Proyecto
+
+```
 LoneCard/
 │
 ├── assets/
@@ -87,6 +89,8 @@ LoneCard/
 ├── index.html
 ├── .htaccess
 └── README.md
+```
+
 
 ⚙️ Cómo funciona
 
@@ -181,4 +185,5 @@ Total libertad para modificar y usar profesionalmente.
 Esteban Gualpa
 
 Lead Developer — (LST)
+
 

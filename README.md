@@ -1,72 +1,98 @@
 🐢 LoneCard — Tarjetas Digitales Dinámicas para Equipos Modernos
-
 by Loneliness Software Technology (LST)
-
 <p align="center"> <img src="assets/banner/lonecard-banner.png" alt="LoneCard Banner" width="100%"> </p>
 📌 Badges del Proyecto
 <p align="left"> <img src="https://img.shields.io/github/last-commit/EstebanLST/LoneCard?color=38bdf8&style=for-the-badge"> <img src="https://img.shields.io/github/languages/top/EstebanLST/LoneCard?color=8b5cf6&style=for-the-badge"> <img src="https://img.shields.io/github/repo-size/EstebanLST/LoneCard?color=f97316&style=for-the-badge"> <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge"> <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge"> </p>
 🚀 ¿Qué es LoneCard?
 
-LoneCard es un sistema moderno y dinámico para generar tarjetas digitales profesionales para colaboradores, usando:
+LoneCard es un sistema moderno y totalmente dinámico para generar tarjetas digitales de presentación para colaboradores, sin duplicar páginas, sin backend y con un diseño profesional basado en la UI corporativa de LST.
 
-1 solo archivo HTML
+💡 Se basa en 3 elementos:
 
-1 archivo JSON con los datos
+1 único archivo HTML
 
-Un diseño responsivo y moderno (LST UI)
+1 archivo JSON con los colaboradores
 
-Sin duplicar archivos, sin complicaciones, sin backend.
+1 script JavaScript que genera la tarjeta
 
-Ideal para:
+Ejemplo:
 
-✔️ Equipos corporativos
-✔️ Empresas con rotación de personal
-✔️ Identificación profesional rápida
-✔️ Contacto directo desde la tarjeta (WhatsApp, email, teléfono)
+https://tudominio.com/lonecard/?id=LST01
+
+
+👉 El servidor oculta automáticamente index.html para mantener una URL más limpia y corporativa.
 
 ⭐ Características principales
-✔️ Totalmente dinámico
+✔️ 100% Dinámico (Sin archivos duplicados)
 
-No se crea un HTML por cada colaborador.
-La app carga la información desde:
+Cada tarjeta depende únicamente del ID:
 
-/data/colaboradores.json
+?id=LST00
 
 
-Usando una URL como:
+La información proviene de:
 
-index.html?id=LST00
+data/colaboradores.json
 
-✔️ QR permanentes
+✔️ QR Permanentes (QRMonkey Compatible)
 
-Los códigos QR no cambian, incluso cuando cambia el colaborador.
-Solo editas el JSON.
+Genera un QR UNA sola vez usando:
 
-✔️ Arquitectura profesional
+🔗 https://www.qrmonkey.com/
 
-Separación clara y mantenible:
+El QR apunta a:
 
-assets/
-   css/
-   js/
-   img/
-data/
-index.html
-.htaccess
-README.md
+https://tudominio.com/lonecard/?id=LST03
+
+
+Si cambia el colaborador → solo editas el JSON.
+El QR sigue funcionando para siempre.
+
+##✔️ Arquitectura profesional
+```
+LoneCard/
+│
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── img/
+│
+├── data/
+│   └── colaboradores.json
+│
+├── index.html
+├── .htaccess
+└── README.md
+```
 
 ✔️ Seguridad lista para producción
 
-El archivo .htaccess:
+El archivo .htaccess incluye:
 
-🔒 Oculta todos los directorios
+🔒 Bloqueo de exploración de directorios
+📁 Protección de archivos internos
+📌 Rutas limpias y profesionales
+➡️ Carga automática de index.html
 
-📁 Impide explorar carpetas
+✔️ UI moderna & responsive (LST Design System)
 
-📌 Fuerza index.html como archivo principal
+Incluye:
+
+✨ Animaciones suaves
+✨ Glassmorphism
+✨ Íconos personalizados
+✨ Colores oficiales LST
+✨ Compatibilidad total con dispositivos:
+
+Android
+
+iPhone
+
+Tablets
+
+Escritorio
 
 ## 🧩 Estructura del Proyecto
-
 ```
 LoneCard/
 │
@@ -91,99 +117,118 @@ LoneCard/
 └── README.md
 ```
 
-
 ⚙️ Cómo funciona
 
-1️⃣ El QR apunta a algo como:
+1️⃣ El usuario abre:
 
-https://tudominio.com/lonecard/index.html?id=LST03
+https://tudominio.com/lonecard/?id=LST01
 
 
-2️⃣ data.js obtiene el JSON
-3️⃣ app.js renderiza dinámicamente la tarjeta
-4️⃣ No hay necesidad de crear nuevos archivos
+2️⃣ JavaScript busca ese ID en:
 
-📱 Responsive & Modern UI (LST Design System)
+data/colaboradores.json
 
-✔️ Animaciones suaves
-✔️ Glassmorphism
-✔️ Colores corporativos LST
-✔️ Íconos personalizados
-✔️ Adaptación automática para:
 
-Android
+3️⃣ El sistema carga dinámicamente:
 
-iPhone
+Nombre
 
-Tablets
+Puesto
 
-Escritorio
+Foto
 
-🛠 Instalación
-🔹 Opción 1: GitHub Pages
+Contacto
 
-Subir el repositorio a GitHub
+Ubicación
 
-Ir a: Settings → Pages
+Botones de acción
 
-Seleccionar branch: main
+4️⃣ Si el ID no existe → muestra un mensaje de error con interfaz profesional.
+
+🛠 Opciones de Instalación
+🔹 ✔️ Opción Recomendada: Subida por FTP
+
+Perfecto para Hosting compartido (CPanel / Hostinger / Banahosting).
+
+📌 Pasos:
+
+Conéctate por FTP (FileZilla recomendado).
+
+Sube todo el contenido de LoneCard:
+
+assets/
+
+data/
+
+index.html
+
+.htaccess
+
+Asegúrate de que .htaccess está visible (algunos hostings lo ocultan).
+
+Abre en el navegador:
+
+https://tudominio.com/lonecard/?id=LST00
+
+
+Listo. Está en producción.
+
+🔹 Opción alternativa: CPanel (Administrador de Archivos)
+
+Comprime el proyecto en ZIP
+
+Súbelo a /public_html/lonecard/
+
+Extrae el ZIP
+
+Asegúrate de NO dejar todo dentro de una carpeta adicional
+
+Verifica que .htaccess exista
+
+🔹 Opción 3: GitHub Pages
+
+Sube el repositorio a GitHub
+
+Ve a Settings → Pages
+
+Branch main
 
 Carpeta /root
 
 Guardar
 
-URL final será:
+URL final:
 
 https://usuario.github.io/LoneCard/
 
-🔹 Opción 2: Hosting / CPanel
+🧭 Roadmap del Proyecto
 
-Solo subir los archivos tal cual.
+✨ Animaciones premium LST
 
-Asegúrate de incluir:
+🛠 Panel administrativo para gestionar colaboradores
 
-✔️ .htaccess
-✔️ Carpeta assets/
-✔️ Carpeta data/
+🧩 Multiempresa / Multiunidad
 
-🔹 Opción 3: Servidor privado / VPS
+🔗 Generador de QR integrado
 
-Recomendado para empresas.
-
-🧭 Roadmap
-
- Animaciones premium LST
-
- Panel administrativo para gestionar colaboradores
-
- Multi-empresa / Multi-equipo
-
- Generador de QR integrado
-
- Versión API / Backend opcional
+🌐 Versión API / Backend opcional
 
 🤝 Cómo contribuir
 
-Haz un fork
+Haz un fork del repositorio
 
-Crea una rama nueva:
+Crea una nueva rama
 
-git checkout -b feature/nueva-funcion
+Haz tus cambios
 
-
-Agrega cambios y sube commits
-
-Crea un Pull Request
+Envía un Pull Request
 
 📄 Licencia
 
-Este proyecto está bajo la licencia MIT.
-Total libertad para modificar y usar profesionalmente.
+Este proyecto se distribuye bajo licencia MIT.
+Puedes usarlo, modificarlo y desplegarlo libremente.
 
 👨‍💻 Autor
 
 Esteban Gualpa
-
-Lead Developer — (LST)
-
-
+Lead Developer — Loneliness Software Technology (LST)
